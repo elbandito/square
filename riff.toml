@@ -1,0 +1,3 @@
+override = "node"
+handler = ""
+artifact = "square.js"

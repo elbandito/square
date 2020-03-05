@@ -4,7 +4,7 @@ version: 2.1
 
 # Import CNB Buildpacks Orb for building Image. See https://circleci.com/orbs/registry/orb/jkutner/buildpacks#jobs-build
 orbs:
-  buildpacks: elbandito/buildpacks@0.0.3
+  buildpacks: elbandito/buildpacks@0.0.6
   node: circleci/node@1.1.6
   go: circleci/go@0.2.0
 

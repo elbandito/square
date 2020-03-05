@@ -1,0 +1,21 @@
+
+# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
+version: 2.1
+
+# Import CNB Buildpacks Orb for building Image. See https://circleci.com/orbs/registry/orb/jkutner/buildpacks#jobs-build
+orbs:
+  buildpacks: jkutner/buildpacks@0.1.0
+  node: circleci/node@1.1.6
+  go: circleci/go@0.2.0
+
+# Workflows define a list of jobs and their run order.
+# https://circleci.com/docs/2.0/concepts/#workflows
+workflows:
+  version: 2
+  function-pack-build-workflow: # name of your workflow
+    jobs:
+      # Build Controller Manager using Cloud Native Buildpacks Orb
+      - buildpacks/build:
+          name: build-square-function
+          image-name: squarefunc 
+          builder: "heroku/functions-buildpacks"
